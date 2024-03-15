@@ -47,3 +47,42 @@ function fetchTopTracksForArtist(artistId) {
 }
 
 // Note: Actual playback and detailed tracking would require more comprehensive backend logic
+
+// Initialize stream counter
+let streamCount = 0;
+
+// Function to update stream counter
+function updateStreamCounter() {
+    const streamCounter = document.getElementById("stream-counter");
+    streamCounter.textContent = "Streams: " + streamCount;
+}
+
+// Function to play artist's songs (replace with your actual functionality)
+function playArtist() {
+    const artistUrl = document.getElementById("artist-url").value;
+    // Make a request to your backend (Flask) to play artist's songs
+    // Pass a callback function to be executed when song playback is complete
+    // For example:
+    // playSong(() => {
+    //     // Song playback complete, increment stream counter
+    //     streamCount++;
+    //     updateStreamCounter();
+    // });
+}
+
+// Example function to simulate song playback (replace with actual functionality)
+function playSong(callback) {
+    // Simulate playing a song
+    setTimeout(() => {
+        // Simulate song playback duration (e.g., 3 seconds)
+        callback(); // Call the callback function when playback is complete
+    }, 3000); // Change this to the actual duration of the song
+}
+
+// Event listener for play button
+const playButton = document.getElementById("play-artist");
+playButton.addEventListener("click", function() {
+    // Call function to play artist's songs
+    playArtist();
+});
+
